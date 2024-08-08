@@ -8,6 +8,8 @@
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!--my css-->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -43,7 +45,7 @@
     <section class="jumbotron text-center">
       <img src="img/Komang_Koor Perlengkapan.jpg" alt="Komang Dar" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Komang Dar</h1>
-      <p class="lead">colleger</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path 
         fill="#ffffff" 
         fill-opacity="1" 
@@ -67,12 +69,12 @@
           </div>
         </div>
         <div class="row justify-content-center fs-4 text-center">
-          <div class="col-md-5">
+          <div class="col-md-5" data-aos="fade-right" data-aos-duration="1300">
             <p>Saya I Komang Darmawan, saya lahir di Jiwa Baru, 18 oktober 2004.
               Saya anak ke-3 dari 4 bersaudara.Impian saya ingin menjadi seorang frontend development.
             </p>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-left" data-aos-duration="1400" data-aos-delay="400">
             <p>Saya lulusan dari Sma N 1 Lubai yang berlokasi didaerah kec.lubai, kab.Muara Enim.
               Saat ini saya masih berkuliah di Universitas Katolik Musi Charitas, Jurusan Informatika.
               Sudah ada beberapa projek yang sudah saya buat seperti undangan pernikahan, portofolio, dan ucapan selamat ulang tahun.
@@ -94,7 +96,7 @@
   </div>
   <div class="row justify-content-center">
     <div class="col-md-4 mb-3">
-      <div class="card">
+      <div class="card" data-aos="flip-left" data-aos-duration="1000">
         <img src="img/gambar/1.jpg" class="card-img-top" alt="Project 1">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -102,7 +104,7 @@
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <div class="card">
+      <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100">
         <img src="img/gambar/2.jpg" class="card-img-top" alt="Project 2">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -110,7 +112,7 @@
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <div class="card">
+      <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="150">
         <img src="img/gambar/3.jpg" class="card-img-top" alt="Project 3">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -118,7 +120,7 @@
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <div class="card">
+      <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
         <img src="img/gambar/4.jpg" class="card-img-top" alt="Project 4">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -126,7 +128,7 @@
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <div class="card">
+      <div class="card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="250">
         <img src="img/gambar/5.jpg" class="card-img-top" alt="Project 5">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -190,6 +192,25 @@
         </p>
       </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      
+      <!-- jsnya AOS -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          once: true,
+        });
+      </script>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+      <script>
+        gsap.registerPlugin(TextPlugin);
+        gsap.to('.lead', {duration:2, delay:1.5, text:'colleger'});
+        gsap.from('.jumbotron img',{duration: 1, rotateY:360, opacity: 0 });
+        gsap.from('.navbar',{duration:1.5, y:'-100%', opacity: 0, ease:'bounce'});
+        gsap.from('.display-4',{duration:1, x:-50, opacity: 0, ease:'back', delay:0.7});
+      </script>
+
       <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxUCu9Dk5DRXQjjiRGLHTpoXacTKESdek-tnepym3ZGu5eXq7BKUAceZDcd_6PXYc-Z/exec'
         const form = document.forms['submit-to-google-sheet']
